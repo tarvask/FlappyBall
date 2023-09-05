@@ -12,9 +12,18 @@ namespace FlappyBall
         private Vector3[] _targetPositions;
         private int _currentTargetIndex;
 
-        private void Start()
+        private void Awake()
         {
             _transform = GetComponent<Transform>();
+        }
+
+        private void OnEnable()
+        {
+            Prepare();
+        }
+
+        private void Prepare()
+        {
             _startPosition = _transform.localPosition;
             _targetPositions = new[]
             {

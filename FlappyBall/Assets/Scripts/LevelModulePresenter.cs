@@ -5,8 +5,8 @@ namespace FlappyBall
 {
     public class LevelModulePresenter
     {
-        private const int ObstaclesHeuristicMaxCount = 16;
-        private const int PointItemsHeuristicMaxCount = 1;
+        public const int ObstaclesHeuristicMaxCount = 16;
+        public const int PointItemsHeuristicMaxCount = 1;
         
         private readonly LevelModuleView _view;
         private readonly LevelModuleFactory _factory;
@@ -23,18 +23,28 @@ namespace FlappyBall
             _pointItems = new List<PointItem>(PointItemsHeuristicMaxCount);
         }
 
+        public void Activate(bool setActive)
+        {
+            _view.gameObject.SetActive(setActive);
+        }
+
+        public void SetPosition(Vector3 newPosition)
+        {
+            _view.transform.localPosition = newPosition;
+        }
+
         public void Remove()
         {
             foreach (Obstacle obstacleObject in _obstacles)
-                Object.Destroy(obstacleObject);
+                _factory.ReturnObstacle(obstacleObject);
 
             foreach (PointItem pointItemObject in _pointItems)
-                Object.Destroy(pointItemObject);
+                _factory.ReturnPointItem(pointItemObject);
             
             _obstacles.Clear();
             _pointItems.Clear();
             
-            Object.Destroy(_view.gameObject);
+            _factory.ReturnSpawnLevelModule(this);
         }
 
         public void OuterFixedUpdate()
@@ -75,7 +85,7 @@ namespace FlappyBall
         {
             pointItem.OnCollected -= RemovePointItem;
             _pointItems.Remove(pointItem);
-            Object.Destroy(pointItem.gameObject);
+            _factory.ReturnPointItem(pointItem);
         }
     }
 }
