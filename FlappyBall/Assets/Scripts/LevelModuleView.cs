@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace FlappyBall
 {
-    public class LevelModule : MonoBehaviour
+    public class LevelModuleView : MonoBehaviour
     {
         [SerializeField] private int size;
 

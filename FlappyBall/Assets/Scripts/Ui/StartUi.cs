@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace FlappyBall
+namespace FlappyBall.Ui
 {
     public class StartUi : MonoBehaviour
     {
@@ -12,19 +12,13 @@ namespace FlappyBall
 
         private void Awake()
         {
-            startButton.onClick.AddListener(StartGame);
+            startButton.onClick.AddListener(() => OnStart?.Invoke());
         }
 
         private void Update()
         {
             if (Input.GetKey(KeyCode.Space))
-                StartGame();
-        }
-
-        private void StartGame()
-        {
-            ShowWindow(false);
-            OnStart?.Invoke();
+                OnStart?.Invoke();
         }
 
         public void ShowWindow(bool isActive)

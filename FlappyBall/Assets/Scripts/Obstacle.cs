@@ -26,7 +26,7 @@ namespace FlappyBall
             _currentTargetIndex = Random.Range(0, _targetPositions.Length);
         }
 
-        private void FixedUpdate()
+        public void OuterFixedUpdate()
         {
             _transform.localPosition = Vector3.MoveTowards(_transform.localPosition,
                 _targetPositions[_currentTargetIndex], velocity * Time.deltaTime);

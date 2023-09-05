@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88fe6227c9524fc7b8de6155b3bdc5f1, type: 3}
+  m_Name: LevelModuleSpawnerParameters
+  m_EditorClassIdentifier: 
+  levelModulePrefab: {fileID: -17701444309039689, guid: b5e7a49d38e6846e6b45299121b6b06b, type: 3}
+  obstaclePrefab: {fileID: 5402899357553943360, guid: ec8c96d669a02484287fa1149225ee84, type: 3}
+  pointItemPrefab: {fileID: 1610086523886754002, guid: 07878c98d33da491296473bfd49bafb8, type: 3}
+  modulesOnSceneMaxCount: 3
+  gameObjectMaxOffsetY: 2.8
+  obstaclesSpreadCoefficient: 0.85
+  pointItemsMaxCount: 1

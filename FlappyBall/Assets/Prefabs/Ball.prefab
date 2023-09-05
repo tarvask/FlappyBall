@@ -49,10 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 4.4
-  jumpCoefficient: 3.6
+  jumpCoefficient: 30
   startPosition: {x: -5, y: 0}
-  startUi: {fileID: 0}
-  pointsUi: {fileID: 0}
 --- !u!212 &3840446249518855630
 SpriteRenderer:
   m_ObjectHideFlags: 0

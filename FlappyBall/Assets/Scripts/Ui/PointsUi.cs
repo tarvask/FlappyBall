@@ -1,7 +1,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace FlappyBall
+namespace FlappyBall.Ui
 {
     public class PointsUi : MonoBehaviour
     {

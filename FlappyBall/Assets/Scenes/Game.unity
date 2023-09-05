@@ -299,7 +299,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &519420033
 MonoBehaviour:
@@ -313,60 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18783be3d00441adbf106361ffa462ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  followObject: {fileID: 1853636014}
   offset: {x: 4, y: 0, z: 0}
---- !u!1 &789654537
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 789654539}
-  - component: {fileID: 789654538}
-  m_Layer: 0
-  m_Name: ModuleSpawner
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &789654538
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789654537}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f0b517c86c54f3ca3d433cf90167cc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ball: {fileID: 1853636016}
-  modulePrefab: {fileID: -17701444309039689, guid: b5e7a49d38e6846e6b45299121b6b06b, type: 3}
-  obstaclePrefab: {fileID: 4112501787847949093, guid: ec8c96d669a02484287fa1149225ee84, type: 3}
-  pointItemPrefab: {fileID: 1610086523886754002, guid: 07878c98d33da491296473bfd49bafb8, type: 3}
-  modulesOnSceneMaxCount: 3
-  gameObjectMaxOffsetY: 2.8
-  obstaclesSpreadCoefficient: 0.85
-  pointItemsMaxCount: 1
---- !u!4 &789654539
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 789654537}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &804186424
 GameObject:
   m_ObjectHideFlags: 0
@@ -720,11 +667,55 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &1853636014 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 3840446249518855629, guid: 60827e1e45123410ab28a2cd981550a2, type: 3}
-  m_PrefabInstance: {fileID: 3840446250297149539}
+--- !u!1 &1659269223
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1659269225}
+  - component: {fileID: 1659269224}
+  m_Layer: 0
+  m_Name: Root
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1659269224
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659269223}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c2e31d95c5840f9929de8b7b0b4a5f2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelModuleSpawnerParameters: {fileID: 11400000, guid: 295bb0d8cf2d546a889c5dbe324085fa, type: 2}
+  cameraFollow: {fileID: 519420033}
+  ball: {fileID: 1853636016}
+  startUi: {fileID: 804186426}
+  pointsUi: {fileID: 1079005864}
+--- !u!4 &1659269225
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1659269223}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1853636016 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3840446249518855628, guid: 60827e1e45123410ab28a2cd981550a2, type: 3}
@@ -892,7 +883,7 @@ PrefabInstance:
       objectReference: {fileID: 1079005864}
     - target: {fileID: 3840446249518855629, guid: 60827e1e45123410ab28a2cd981550a2, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3840446249518855629, guid: 60827e1e45123410ab28a2cd981550a2, type: 3}
       propertyPath: m_LocalPosition.x

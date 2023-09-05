@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace FlappyBall
@@ -8,8 +9,12 @@ namespace FlappyBall
         [SerializeField] private float visionRadius;
         [SerializeField] private int points;
 
-        private Transform _transform;
+        // dependencies
         private Transform _target;
+
+        private Transform _transform;
+
+        public Action<PointItem> OnCollected;
 
         public int Points => points;
 
@@ -18,7 +23,7 @@ namespace FlappyBall
             _transform = GetComponent<Transform>();
         }
 
-        private void FixedUpdate()
+        public void OuterFixedUpdate()
         {
             if (ReferenceEquals(_target, null))
                 return;
@@ -32,10 +37,10 @@ namespace FlappyBall
 
         private void OnTriggerEnter2D(Collider2D col)
         {
-            Destroy(gameObject);
+            OnCollected?.Invoke(this);
         }
 
-        public void SetTarget(Transform target)
+        public void Construct(Transform target)
         {
             _target = target;
         }
